@@ -1,7 +1,5 @@
-pipeline {
-
-	agent any 
-
+node {
+ 
 	stages {
 
 		stage ('Compile Stage')	{
