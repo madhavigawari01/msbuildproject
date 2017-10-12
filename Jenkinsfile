@@ -1,34 +1,10 @@
 node {
- 
-	stages {
+  stage('HelloWorld') {
+    echo 'Hello World'
+  }
 
-		stage ('Compile Stage')	{
-
-		steps {
-		          withMaven(maven : '3.5.0') {
-				sh 'mvn clean compile'
-				}
-			}
-		}
-
-		stage ('Testing Stage') {
-
-                steps {
-                          withMaven(maven : '3.5.0') {
-                                sh 'mvn test'
-                                }
-                        }
-                }
-
-		stage ('Deployment Stage') {
-
-                steps {
-                          withMaven(maven : '3.5.0') {
-                                sh 'mvn deploy'
-                                }
-                        }
-                }
-	}
-
+  stage('git clone') {
+    git clone "https://github.com/madhavigawari01/msbuildproject.git"
+  }
 }
 
