@@ -1,23 +1,30 @@
 pipeline {
-    agent any
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+	agent any 
+
+	stages {
+
+		stage ('Compile Stage')	{
+
+		steps {
+				sh 'date'
+				}
+			}
+
+		stage ('Testing Stage') {
+
+                steps {
+                                sh 'whoami'
+                                }
+                        }
+
+		stage ('Deployment Stage') {
+
+                steps {
+                                sh 'lastlog'
+                                }
+                        }
+	}
+
 }
-
 
