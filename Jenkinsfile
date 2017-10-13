@@ -1,10 +1,23 @@
-node (master) {
-  stage('HelloWorld') {
-    echo 'Hello World'
-  }
+pipeline {
+    agent any
 
-  stage('git clone') {
-    git clone "https://github.com/madhavigawari01/msbuildproject.git"
-  }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
 }
+
 
