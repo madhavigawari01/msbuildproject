@@ -1,29 +1,28 @@
 pipeline {
-
-	agent any 
-
+	agent none 
 	stages {
-
-		stage ('Compile Stage')	{
-
+		stage ('Compile Stage')	
+		{
 		steps {
 				sh 'date'
 				}
-			}
+		}
 
-		stage ('Testing Stage') {
+		stage ('Testing Stage') 
+		{
 
                 steps {
                                 sh 'whoami'
                                 }
-                        }
+                 }
 
-		stage ('Deployment Stage') {
+		stage ('Deployment Stage') 
+		{
 
                 steps {
                                 sh 'lastlog'
                                 }
-                        }
+                 }
 	}
 
 }
